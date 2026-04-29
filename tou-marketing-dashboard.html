@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Office of Us — Marketing</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F7F4EF;color:#1A1A1A;min-height:100vh}
+  .wrap{max-width:480px;margin:0 auto;background:#fff;min-height:100vh}
+
+  .hdr{padding:1.25rem 1rem 1rem;border-bottom:1px solid #E8E4DF}
+  .hdr-top{display:flex;justify-content:space-between;align-items:flex-start}
+  .eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-bottom:2px}
+  .hdr-title{font-size:21px;font-weight:600;color:#1A1A1A}
+  .sync-btn{font-size:11px;color:#888;border:1px solid #DDD;border-radius:8px;padding:5px 10px;background:transparent;cursor:pointer}
+  .sync-btn:active{background:#F0EDE8}
+
+  .stats{display:flex;gap:6px;padding:12px 1rem}
+  .sp{flex:1;background:#F7F4EF;border-radius:10px;padding:8px 6px;text-align:center}
+  .sn{font-size:22px;font-weight:600;display:block}
+  .sl{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:#888;display:block;margin-top:2px}
+
+  .section-lbl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#BBB;margin-bottom:6px}
+
+  .cal-wrap{padding:10px 1rem 6px}
+  .cal-strip{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .cal-strip::-webkit-scrollbar{display:none}
+  .cal-day{min-width:40px;height:56px;border-radius:10px;border:1px solid #E8E4DF;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;gap:3px;background:#fff;-webkit-tap-highlight-color:transparent}
+  .cal-day.has-items{border-color:#C8C2BA}
+  .cal-day.active{background:#1A1A1A;border-color:#1A1A1A}
+  .cal-day.active .cal-dn,.cal-day.active .cal-dd{color:#fff}
+  .cal-dn{font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:#999}
+  .cal-dd{font-size:15px;font-weight:600;color:#1A1A1A;line-height:1}
+  .cal-dots{display:flex;gap:2px;align-items:center;min-height:7px}
+  .cdot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+
+  .filters{padding:10px 1rem 4px}
+  .fbar{display:flex;gap:5px;flex-wrap:wrap}
+  .ftab{border:1px solid #DDD;background:transparent;border-radius:20px;padding:6px 12px;font-size:12px;color:#888;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+  .ftab.on{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+
+  .cbar{display:flex;gap:5px;padding:8px 1rem 12px;flex-wrap:wrap}
+  .ctab{border:1px solid #DDD;background:transparent;border-radius:8px;padding:5px 11px;font-size:11px;color:#888;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .ctab.on{border-color:#1A1A1A;color:#1A1A1A;font-weight:600}
+
+  .cards{padding:0 1rem 4rem;display:flex;flex-direction:column;gap:8px}
+  .card{background:#fff;border:1px solid #E8E4DF;border-radius:14px;padding:14px 16px}
+  .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:7px}
+  .card-title{font-size:14px;font-weight:600;color:#1A1A1A;line-height:1.35;flex:1}
+  .sbadge{border-radius:20px;padding:4px 9px;font-size:10px;font-weight:600;white-space:nowrap;flex-shrink:0;letter-spacing:.04em;display:flex;align-items:center;gap:4px}
+  .b-review{background:#FAEEDA;color:#7A4A08}
+  .b-approved{background:#EAF3DE;color:#2E5F10}
+  .b-live{background:#E6F1FB;color:#1255A0}
+  .b-draft{background:#F2F0EC;color:#888}
+  .card-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .chbadge{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:#999;border:1px solid #E8E4DF;border-radius:7px;padding:2px 7px}
+  .cdate{font-size:12px;color:#999}
+  .card-note{font-size:13px;color:#666;margin-top:9px;padding-top:9px;border-top:1px solid #F0EDE8;line-height:1.5}
+  .link-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;color:#1A6FC4;border:1px solid #BEDAF5;border-radius:8px;padding:5px 10px;text-decoration:none;background:transparent}
+
+  .empty{text-align:center;padding:3rem 1rem;color:#999;font-size:14px}
+  .loading{text-align:center;padding:3rem 1rem;color:#AAA;font-size:14px}
+  .error-card{margin:1rem;padding:14px 16px;background:#FFF8F0;border:1px solid #F5D8B0;border-radius:14px;font-size:13px;color:#7A4A08;line-height:1.6}
+  .error-card strong{display:block;margin-bottom:6px}
+  code{background:#F0EDE8;padding:2px 5px;border-radius:4px;font-family:monospace;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hdr">
+    <div class="hdr-top">
+      <div>
+        <p class="eyebrow">The Office of Us</p>
+        <p class="hdr-title" id="board-title">Marketing</p>
+      </div>
+      <button class="sync-btn" onclick="loadSheet()">⟳ Refresh</button>
+    </div>
+  </div>
+
+  <div class="stats" id="stats">
+    <div class="loading" style="width:100%">Loading...</div>
+  </div>
+  <div id="main-content"></div>
+</div>
+
+<script>
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQF02yiRT2ghLARVvbjFHMHVqulN89jn9h-_ZfE5QbFNsvOx_fvzVK-ZHVFe2NKxf0LSYZ6Kr3i7cti/pub?output=csv";
+
+const DAY_NAMES = ["Su","Mo","Tu","We","Th","Fr","Sa"];
+const STATUS_META = {
+  review:   {label:"Needs review", color:"#EF9F27", badge:"b-review"},
+  approved: {label:"Approved",     color:"#639922", badge:"b-approved"},
+  live:     {label:"Live",         color:"#378ADD", badge:"b-live"},
+  draft:    {label:"In progress",  color:"#C0BAB2", badge:"b-draft"},
+};
+
+let items=[], activeSt="all", activeCh="all", activeDay=null, calMonth=null, calYear=null;
+
+function parseCSV(text) {
+  const lines = text.trim().split("\n");
+  const headers = lines[0].split(",").map(h => h.trim().replace(/^"|"$/g,"").toLowerCase());
+  return lines.slice(1).map(line => {
+    const cols = [];
+    let cur = "", inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      if (line[i] === '"') { inQ = !inQ; }
+      else if (line[i] === ',' && !inQ) { cols.push(cur); cur = ""; }
+      else cur += line[i];
+    }
+    cols.push(cur);
+    const obj = {};
+    headers.forEach((h,i) => obj[h] = (cols[i]||"").trim().replace(/^"|"$/g,""));
+    return obj;
+  }).filter(r => r.title || r.Title);
+}
+
+function parseDate(str) {
+  if (!str) return {day:null,month:null,year:null,label:""};
+  const d = new Date(str);
+  if (!isNaN(d.getTime())) {
+    const adjusted = new Date(d.getTime() + d.getTimezoneOffset() * 60000);
+    return {
+      day: adjusted.getDate(),
+      month: adjusted.getMonth(),
+      year: adjusted.getFullYear(),
+      label: adjusted.toLocaleDateString("en-US",{month:"short",day:"numeric"})
+    };
+  }
+  return {day:null,month:null,year:null,label:str};
+}
+
+function loadSheet() {
+  document.getElementById("stats").innerHTML = '<div class="loading" style="width:100%">Syncing...</div>';
+  document.getElementById("main-content").innerHTML = "";
+
+  fetch(SHEET_URL)
+    .then(r => { if (!r.ok) throw new Error("fetch failed"); return r.text(); })
+    .then(text => {
+      const rows = parseCSV(text);
+      if (rows.length === 0) {
+        document.getElementById("stats").innerHTML = "";
+        document.getElementById("main-content").innerHTML = `<div class="error-card"><strong>Sheet is empty</strong>Add a row with columns: <code>Title</code>, <code>Channel</code>, <code>Date</code>, <code>Status</code>, <code>Note</code>, <code>Link</code> then tap Refresh.</div>`;
+        return;
+      }
+
+      items = rows.map((r,i) => {
+        const dateInfo = parseDate(r.date || r.Date || "");
+        const rawStatus = (r.status || r.Status || "draft").toLowerCase().trim();
+        const status = STATUS_META[rawStatus] ? rawStatus : "draft";
+        return {
+          id: i,
+          title: r.title || r.Title || "Untitled",
+          channel: (r.channel || r.Channel || "").trim(),
+          day: dateInfo.day,
+          month: dateInfo.month,
+          year: dateInfo.year,
+          dateLabel: dateInfo.label,
+          status,
+          note: r.note || r.Note || r.notes || r.Notes || "",
+          link: r.link || r.Link || r.url || r.URL || "",
+        };
+      });
+
+      const datedItems = items.filter(i => i.month !== null);
+      if (datedItems.length > 0) {
+        const sorted = [...datedItems].sort((a,b) => (a.year*12+a.month) - (b.year*12+b.month));
+        const mid = sorted[Math.floor(sorted.length / 2)];
+        calMonth = mid.month;
+        calYear = mid.year;
+      } else {
+        const now = new Date();
+        calMonth = now.getMonth();
+        calYear = now.getFullYear();
+      }
+
+      const monthName = new Date(calYear, calMonth, 1).toLocaleString("en-US",{month:"long"});
+      document.getElementById("board-title").textContent = `${monthName} ${calYear} — Marketing`;
+
+      renderAll();
+    })
+    .catch(() => {
+      document.getElementById("stats").innerHTML = "";
+      document.getElementById("main-content").innerHTML = `<div class="error-card"><strong>Couldn't reach the sheet</strong>Make sure it's published via File → Share → Publish to web → CSV format. If the URL changed, the HTML file will need to be updated.</div>`;
+    });
+}
+
+function renderAll() { renderStats(); renderMain(); }
+
+function renderStats() {
+  const c = {review:0,approved:0,live:0,draft:0};
+  items.forEach(i => c[i.status] = (c[i.status]||0)+1);
+  document.getElementById("stats").innerHTML = `
+    <div class="sp"><span class="sn" style="color:#BA7517">${c.review}</span><span class="sl">Need you</span></div>
+    <div class="sp"><span class="sn" style="color:#3B6D11">${c.approved}</span><span class="sl">Approved</span></div>
+    <div class="sp"><span class="sn" style="color:#185FA5">${c.live}</span><span class="sl">Live now</span></div>
+    <div class="sp"><span class="sn" style="color:#888">${c.draft}</span><span class="sl">Coming up</span></div>`;
+}
+
+function renderMain() {
+  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+  let calHTML = "";
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(calYear, calMonth, d);
+    const dayItems = items.filter(i => i.day===d && i.month===calMonth && i.year===calYear);
+    const dots = dayItems.map(i => `<div class="cdot" style="background:${STATUS_META[i.status].color}"></div>`).join("");
+    calHTML += `<div class="cal-day${dayItems.length?" has-items":""}${activeDay===d?" active":""}" onclick="setDay(${d})">
+      <span class="cal-dn">${DAY_NAMES[date.getDay()]}</span>
+      <span class="cal-dd">${d}</span>
+      <div class="cal-dots">${dots}</div>
+    </div>`;
+  }
+
+  const channels = ["all", ...new Set(items.map(i=>i.channel).filter(Boolean))];
+  const chanHTML = channels.map(c => `<button class="ctab${activeCh===c?" on":""}" onclick="setCh('${c}')">${c==="all"?"All channels":c}</button>`).join("");
+
+  const statFilters = [
+    {k:"all",l:"All"},
+    {k:"review",l:"Needs review"},
+    {k:"approved",l:"Approved"},
+    {k:"live",l:"Live"},
+    {k:"draft",l:"In progress"}
+  ];
+
+  const filtered = items.filter(i =>
+    (activeSt==="all" || i.status===activeSt) &&
+    (activeCh==="all" || i.channel===activeCh) &&
+    (activeDay===null || (i.day===activeDay && i.month===calMonth))
+  );
+
+  const cardsHTML = filtered.length ? filtered.map(item => {
+    const m = STATUS_META[item.status];
+    const linkBtn = item.link ? `<a class="link-btn" href="${item.link}" target="_blank">Open content ↗</a>` : "";
+    return `<div class="card">
+      <div class="card-top">
+        <p class="card-title">${item.title}</p>
+        <span class="sbadge ${m.badge}"><span style="width:5px;height:5px;border-radius:50%;background:${m.color};display:inline-block;flex-shrink:0"></span>${m.label}</span>
+      </div>
+      <div class="card-meta">
+        ${item.channel?`<span class="chbadge">${item.channel}</span>`:""}
+        ${item.dateLabel?`<span class="cdate">${item.dateLabel}</span>`:""}
+      </div>
+      ${item.note?`<p class="card-note">${item.note}</p>`:""}
+      ${linkBtn}
+    </div>`;
+  }).join("") : '<div class="empty">No items match this filter.</div>';
+
+  document.getElementById("main-content").innerHTML = `
+    <div class="cal-wrap">
+      <p class="section-lbl" style="padding:0">At a glance — tap a date</p>
+      <div class="cal-strip">${calHTML}</div>
+    </div>
+    <div class="filters">
+      <p class="section-lbl">Status</p>
+      <div class="fbar">${statFilters.map(f=>`<button class="ftab${activeSt===f.k?" on":""}" onclick="setSt('${f.k}')">${f.l}</button>`).join("")}</div>
+    </div>
+    <div class="cbar">${chanHTML}</div>
+    <div class="cards">${cardsHTML}</div>`;
+}
+
+function setDay(d) { activeDay = activeDay===d ? null : d; renderMain(); }
+function setSt(s)  { activeSt = s; renderMain(); }
+function setCh(c)  { activeCh = c; renderMain(); }
+
+loadSheet();
+</script>
+</body>
+</html>
