@@ -1,0 +1,240 @@
+
+<h2 class="sr-only" style="position:absolute;left:-9999px;">FW26 competitive pricing bands with The Office of Us AW25 and AW26 draft pricing overlaid across four brand tiers.</h2>
+
+<style>
+  .chart-wrap { padding: 1.5rem 0 1rem; font-family: var(--font-sans); }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 1.25rem; font-size: 12px; color: var(--color-text-secondary); }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .legend-line { width: 18px; height: 3px; flex-shrink: 0; }
+  .axis-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--color-text-tertiary); margin-left: 135px; margin-right: 10px; margin-bottom: 6px; }
+  .tier-section { margin-bottom: 1.75rem; }
+  .tier-label { font-size: 10px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
+  .tier-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 2px; }
+  .tier-sub { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 8px; }
+  .category-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .cat-label { font-size: 11px; color: var(--color-text-secondary); width: 125px; flex-shrink: 0; text-align: right; }
+  .bar-track { flex: 1; height: 14px; background: var(--color-background-secondary); border-radius: 3px; position: relative; }
+  .bar-range { position: absolute; height: 100%; border-radius: 3px; top: 0; opacity: 0.85; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.25rem 0; }
+  .tou-section { margin-bottom: 1.75rem; padding: 14px 16px; background: var(--color-background-secondary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-secondary); }
+  .tou-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 2px; }
+  .tou-sub { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 10px; }
+  .tou-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .tou-cat { font-size: 11px; color: var(--color-text-secondary); width: 125px; flex-shrink: 0; text-align: right; }
+  .tou-track { flex: 1; height: 22px; background: var(--color-background-primary); border-radius: 3px; position: relative; border: 0.5px solid var(--color-border-tertiary); }
+  .tou-bar { position: absolute; height: 10px; border-radius: 2px; top: 1px; }
+  .tou-bar2 { position: absolute; height: 10px; border-radius: 2px; bottom: 1px; }
+  .note { font-size: 10px; color: var(--color-text-tertiary); margin-top: 1.25rem; line-height: 1.6; }
+  .delta-label { font-size: 10px; color: var(--color-text-tertiary); width: auto; flex-shrink: 0; }
+  .up { color: #1D9E75; }
+</style>
+
+<div class="chart-wrap">
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch" style="background:#3266ad;"></div> Loafers / Oxfords</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#1D9E75;"></div> Boots</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#D4537E;"></div> Heels</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#EF9F27;"></div> Sneakers</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#7F77DD;"></div> Flats</div>
+  <div style="width:1px;background:var(--color-border-tertiary);height:14px;margin:0 4px;"></div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#888;border-radius:1px;"></div> AW25 (The Office of Us)</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#2C2C2A;border-radius:1px;"></div> AW26 Draft (The Office of Us)</div>
+</div>
+
+<!-- Scale: $200=0%, $1700=100%, range=1500 -->
+<!-- (val-200)/1500 * 100 -->
+<div class="axis-labels">
+  <span>$200</span><span>$500</span><span>$800</span><span>$1,100</span><span>$1,400</span><span>$1,700+</span>
+</div>
+
+<!-- THE OFFICE OF US — shown first for reference -->
+<div class="tou-section">
+  <div class="tou-title">The Office of Us</div>
+  <div class="tou-sub">Top bar = AW25 actual &nbsp;·&nbsp; Bottom bar = AW26 draft &nbsp;·&nbsp; Ranges reflect full collection min–max retail</div>
+
+  <!-- Loafers/Oxfords: AW25 $595–725, AW26 $650–775 -->
+  <div class="tou-row">
+    <div class="tou-cat">Loafers / Oxfords</div>
+    <div class="tou-track">
+      <div class="tou-bar" style="left:26.3%;width:8.7%;background:#3266ad;opacity:0.4;"></div>
+      <div class="tou-bar2" style="left:30%;width:8.3%;background:#3266ad;opacity:0.85;"></div>
+    </div>
+    <div class="delta-label"><span class="up">↑</span> $650–775</div>
+  </div>
+
+  <!-- Boots: AW25 $725–995, AW26 $795–995 -->
+  <div class="tou-row">
+    <div class="tou-cat">Boots</div>
+    <div class="tou-track">
+      <div class="tou-bar" style="left:35%;width:18%;background:#1D9E75;opacity:0.4;"></div>
+      <div class="tou-bar2" style="left:39.7%;width:13.3%;background:#1D9E75;opacity:0.85;"></div>
+    </div>
+    <div class="delta-label"><span class="up">↑</span> $795–995</div>
+  </div>
+
+  <!-- Heels: AW25 $475–675, AW26 $595–750 -->
+  <div class="tou-row">
+    <div class="tou-cat">Heels</div>
+    <div class="tou-track">
+      <div class="tou-bar" style="left:18.3%;width:13.3%;background:#D4537E;opacity:0.4;"></div>
+      <div class="tou-bar2" style="left:26.3%;width:10.3%;background:#D4537E;opacity:0.85;"></div>
+    </div>
+    <div class="delta-label"><span class="up">↑</span> $595–750</div>
+  </div>
+
+  <!-- Sneakers: AW25 $395–495, AW26 $450–550 -->
+  <div class="tou-row">
+    <div class="tou-cat">Sneakers</div>
+    <div class="tou-track">
+      <div class="tou-bar" style="left:13%;width:6.7%;background:#EF9F27;opacity:0.4;"></div>
+      <div class="tou-bar2" style="left:16.7%;width:6.7%;background:#EF9F27;opacity:0.85;"></div>
+    </div>
+    <div class="delta-label"><span class="up">↑</span> $450–550</div>
+  </div>
+
+  <!-- Flats: AW25 $625–675, AW26 $675–695 -->
+  <div class="tou-row">
+    <div class="tou-cat">Flats</div>
+    <div class="tou-track">
+      <div class="tou-bar" style="left:28.3%;width:3.3%;background:#7F77DD;opacity:0.4;"></div>
+      <div class="tou-bar2" style="left:31.7%;width:1.3%;background:#7F77DD;opacity:0.85;"></div>
+    </div>
+    <div class="delta-label"><span class="up">↑</span> $675–695</div>
+  </div>
+</div>
+
+<!-- TIER 1: HIGH LUXURY -->
+<div class="tier-section">
+  <div class="tier-label">Tier 1 · Established High Luxury</div>
+  <div class="tier-name">Prada <span style="font-weight:400;color:var(--color-text-tertiary);font-size:12px;">· Gucci · Bottega · Saint Laurent</span></div>
+  <div class="category-row">
+    <div class="cat-label">Loafers / Oxfords</div>
+    <div class="bar-track"><div class="bar-range" style="left:40%;width:33.3%;background:#3266ad;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$800–1,300</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Boots</div>
+    <div class="bar-track"><div class="bar-range" style="left:53.3%;width:40%;background:#1D9E75;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$1,000–1,700+</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Heels</div>
+    <div class="bar-track"><div class="bar-range" style="left:46.7%;width:46.7%;background:#D4537E;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$900–1,800+</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Sneakers</div>
+    <div class="bar-track"><div class="bar-range" style="left:26.7%;width:26.7%;background:#EF9F27;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$600–1,000</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Flats</div>
+    <div class="bar-track"><div class="bar-range" style="left:33.3%;width:33.3%;background:#7F77DD;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$700–1,200</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TIER 2 -->
+<div class="tier-section">
+  <div class="tier-label">Tier 2 · Established Classic / Mid Luxury</div>
+  <div class="tier-name">Tod's · Bally · Pedro Garcia <span style="font-weight:400;color:var(--color-text-tertiary);font-size:12px;">· Ferragamo · Church's</span></div>
+  <div class="category-row">
+    <div class="cat-label">Loafers / Oxfords</div>
+    <div class="bar-track"><div class="bar-range" style="left:26.7%;width:26.7%;background:#3266ad;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$600–1,000</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Boots</div>
+    <div class="bar-track"><div class="bar-range" style="left:33.3%;width:33.3%;background:#1D9E75;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$700–1,200</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Heels</div>
+    <div class="bar-track"><div class="bar-range" style="left:26.7%;width:33.3%;background:#D4537E;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$600–1,100</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Sneakers</div>
+    <div class="bar-track"><div class="bar-range" style="left:20%;width:33.3%;background:#EF9F27;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$500–1,000</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Flats</div>
+    <div class="bar-track"><div class="bar-range" style="left:13.3%;width:26.7%;background:#7F77DD;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$400–800</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TIER 3 -->
+<div class="tier-section">
+  <div class="tier-label">Tier 3 · Cool New Age / In-Between</div>
+  <div class="tier-name">Aeyde · Hereu · Toteme · Co · Jamie Haller <span style="font-weight:400;color:var(--color-text-tertiary);font-size:12px;">· BY FAR · Malone Souliers</span></div>
+  <div class="category-row">
+    <div class="cat-label">Loafers / Oxfords</div>
+    <div class="bar-track"><div class="bar-range" style="left:13.3%;width:26.7%;background:#3266ad;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$400–800</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Boots</div>
+    <div class="bar-track"><div class="bar-range" style="left:20%;width:33.3%;background:#1D9E75;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$500–1,000</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Heels</div>
+    <div class="bar-track"><div class="bar-range" style="left:13.3%;width:26.7%;background:#D4537E;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$400–800</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Sneakers</div>
+    <div class="bar-track"><div class="bar-range" style="left:6.7%;width:20%;background:#EF9F27;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$300–600</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Flats</div>
+    <div class="bar-track"><div class="bar-range" style="left:6.7%;width:20%;background:#7F77DD;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$300–600</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TIER 4 -->
+<div class="tier-section">
+  <div class="tier-label">Tier 4 · Contemporary</div>
+  <div class="tier-name">Staud <span style="font-weight:400;color:var(--color-text-tertiary);font-size:12px;">· Larroude · Freda Salvador · Paloma Barceló · Vince</span></div>
+  <div class="category-row">
+    <div class="cat-label">Loafers / Oxfords</div>
+    <div class="bar-track"><div class="bar-range" style="left:6.7%;width:13.3%;background:#3266ad;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$300–500</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Boots</div>
+    <div class="bar-track"><div class="bar-range" style="left:6.7%;width:20%;background:#1D9E75;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$300–600</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Heels</div>
+    <div class="bar-track"><div class="bar-range" style="left:6.7%;width:16.7%;background:#D4537E;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$300–550</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Sneakers</div>
+    <div class="bar-track"><div class="bar-range" style="left:0%;width:13.3%;background:#EF9F27;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$200–400</span>
+  </div>
+  <div class="category-row">
+    <div class="cat-label">Flats</div>
+    <div class="bar-track"><div class="bar-range" style="left:0%;width:13.3%;background:#7F77DD;"></div></div>
+    <span style="font-size:11px;color:var(--color-text-tertiary);">$200–400</span>
+  </div>
+</div>
+
+<div class="note">The Office of Us AW25 and AW26 draft pricing sourced from uploaded file; excludes care items, kilties, tassels, and mules. Competitor ranges: Farfetch, SSENSE, Net-a-Porter, Neiman Marcus, Saks Fifth Avenue — full retail, FW25/26 season. All prices USD.</div>
+
+</div>
